@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mirrov/player.dart';
+import 'package:mirrov/widget/player.dart';
 
 void main() {
   runApp(const App());
