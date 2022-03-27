@@ -9,10 +9,25 @@ class Player extends StatefulWidget {
 }
 
 class _PlayerState extends State<Player> {
+  final FijkPlayer player = FijkPlayer();
+
+  @override
+  void initState() {
+    super.initState();
+    player.setDataSource(
+        "http://39.134.115.163:8080/PLTV/88888910/224/3221225638/index.m3u8",
+        autoPlay: true);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    player.release();
+  }
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
-    );
+    return Scaffold(body: Center(
+      child: FijkView(player: player),
+    ),);
   }
 }
